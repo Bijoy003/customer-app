@@ -1,0 +1,17 @@
+<p>orders works!</p>
+
+
+<h2>Signal Counter: {{ counterService.count() }}</h2>
+<button (click)="counterService.increment()">+</button>
+<button (click)="counterService.decrement()">-</button>
+<button (click)="counterService.reset()">Reset</button>
+
+<h2>Service based Counter: {{ count }}</h2>
+<button (click)="stateService.increment()">+</button>
+<button (click)="stateService.decrement();">-</button>
+<button (click)="stateService.reset()">Reset</button>
+
+<h2>NGRX Counter: {{ count$ | async }}</h2>
+<button (click)="increment()">+</button>
+<button (click)="decrement()">-</button>
+<button (click)="reset()">Reset</button>

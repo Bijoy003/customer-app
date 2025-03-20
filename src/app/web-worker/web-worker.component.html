@@ -1,0 +1,14 @@
+<p>web-worker works!</p>
+
+<input type="number" #numInput />
+<button (click)="calculateFibonacci(numInput.valueAsNumber)">Calculate Fibonacci</button>
+<button (click)="startWorker(numInput.valueAsNumber)">Calculate Fibonacci With WebWorker</button>
+
+<div>
+    <button (click)="count()">Count</button>
+    <p>Counter: {{ counter }}</p>
+</div>
+
+
+
+<p *ngIf="result !== null">Result: {{ result }}</p>

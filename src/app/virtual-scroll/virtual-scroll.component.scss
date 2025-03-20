@@ -1,0 +1,21 @@
+.example-viewport {
+  height: 400px;
+  width: 300px;
+  border: 1px solid black;
+  overflow: auto;
+}
+
+.example-item {
+  height: 50px;
+  display: flex;
+  align-items: center;
+  padding: 8px;
+  border-bottom: 1px solid #ddd;
+}
+
+.scrolling-container{
+    display: block;
+    width: 300px;
+    height: 300px;
+    overflow-y: scroll;
+}

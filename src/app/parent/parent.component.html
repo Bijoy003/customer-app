@@ -1,0 +1,5 @@
+<h1>Counter: {{ counter }}</h1>
+<h2>Name: {{this.user.name}}</h2>
+<button (click)="increment()">Increment Counter</button>
+<button (click)="updateUser()">Update User</button>
+<app-child-onpush [user]="user"></app-child-onpush>
