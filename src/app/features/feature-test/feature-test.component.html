@@ -1,0 +1,47 @@
+<h2>Dynamic Routing using useFactory</h2>
+
+<p>
+  <strong>What is this?</strong><br>
+  Angular allows routes to be created dynamically at application startup using a factory function (<code>useFactory</code>).
+</p>
+
+<p>
+  <strong>How it works:</strong>
+</p>
+<ul>
+  <li>A factory function runs when the app starts.</li>
+  <li>It checks some condition (e.g., feature flag, role, config).</li>
+  <li>Based on that condition, it dynamically adds or removes routes.</li>
+  <li>Angular registers those routes before the app loads.</li>
+</ul>
+
+<p>
+  <strong>This demo:</strong>
+</p>
+<ul>
+  <li>Uses <code>localStorage('beta')</code> as a feature flag.</li>
+  <li>If <strong>beta = true</strong> → <code>/beta</code> route is added.</li>
+  <li>If <strong>beta = false</strong> → <code>/beta</code> route does not exist.</li>
+</ul>
+
+<p>
+  <strong>Important:</strong>
+</p>
+<ul>
+  <li>Factory runs <strong>only once at app startup</strong>.</li>
+  <li>Changes require a <strong>page reload (F5)</strong>.</li>
+  <li>This is not reactive like guards.</li>
+</ul>
+
+<hr>
+
+<button (click)="enableBeta()">Enable Beta</button>
+<button (click)="disableBeta()">Disable Beta</button>
+
+<br><br>
+
+<button (click)="goToBeta()">Go to /beta</button>
+
+<p style="margin-top:20px;">
+  ⚠️ After changing the flag, reload the app to apply new routes.
+</p>

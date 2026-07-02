@@ -1,0 +1,30 @@
+<div style="border:2px solid green; padding:12px; border-radius:6px;">
+  <h3>Dashboard Widget (Web Component) 🚀</h3>
+
+  <p>
+    This component is rendered using a <strong>Web Component</strong> (custom HTML element).
+  </p>
+
+  <hr />
+
+  <p><strong>🔹 How it works:</strong></p>
+  <ul>
+    <li>This UI is NOT part of the main Angular app.</li>
+    <li>It is loaded from a separate app running on <strong>port 4202</strong>.</li>
+    <li>A script dynamically registers:
+      <code>customElements.define('dashboard-widget', ...)</code>
+    </li>
+    <li>Once registered, this tag works like a native HTML element.</li>
+  </ul>
+
+  <p><strong>🔹 Why use this?</strong></p>
+  <ul>
+    <li>Independent deployment</li>
+    <li>Reusable across applications</li>
+    <li>Framework-agnostic UI</li>
+  </ul>
+
+  <p>
+    💡 <strong>Key idea:</strong> This is a Micro Frontend implemented using Web Components.
+  </p>
+</div>

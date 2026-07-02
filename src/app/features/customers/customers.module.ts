@@ -14,4 +14,8 @@ import { CustomersComponent } from './customers.component';
     CustomersRoutingModule
   ]
 })
-export class CustomersModule { }
+export class CustomersModule {
+  constructor() {
+    console.log('Customer module loaded');
+  }
+ }

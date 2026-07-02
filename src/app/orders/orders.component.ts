@@ -5,7 +5,7 @@ import { AppCounterState } from '../ngrx-state-management/counter.state';
 import { Store } from '@ngrx/store';
 import { selectCount } from '../ngrx-state-management/counter.selector';
 import { decrement, increment, reset } from '../ngrx-state-management/counter.actions';
-import { CounterSubjectService } from '../Services/counter-subject.service';
+import { CounterSubjectService } from '../core/Services/counter-subject.service';
 
 @Component({
   selector: 'app-orders',

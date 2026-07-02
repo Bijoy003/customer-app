@@ -1,0 +1,28 @@
+<p>parallel-api works!</p>
+<h3>Parallel API call Test</h3>
+
+<button (click)="getData()">Load Data</button>
+
+<hr />
+
+<h3>Users</h3>
+<ul *ngIf="userData?.length">
+  <li *ngFor="let user of userData">
+    {{ user.name }} ({{ user.email }})
+  </li>
+</ul>
+
+<h3>Posts</h3>
+<ul *ngIf="postData?.length">
+  <li *ngFor="let post of postData">
+    <strong>{{ post.title }}</strong>
+  </li>
+</ul>
+
+<h3>Todos</h3>
+<ul *ngIf="todoData?.length">
+  <li *ngFor="let todo of todoData">
+    {{ todo.title }} - 
+    <span>{{ todo.completed ? 'Completed' : 'Pending' }}</span>
+  </li>
+</ul>

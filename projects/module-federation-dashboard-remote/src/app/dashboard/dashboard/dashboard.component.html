@@ -1,0 +1,33 @@
+<div style="border: 2px solid green; padding: 12px; border-radius: 6px">
+  <h2>Remote Dashboard 🚀</h2>
+
+  <p>
+    This page is loaded from a <b>separate Angular application</b> using
+    <b>Module Federation</b>.
+  </p>
+
+  <hr />
+
+  <h4>How it works:</h4>
+  <ol>
+    <li>User navigates to <b>/remote-dashboard</b> in the shell app</li>
+    <li>Shell calls <code>loadRemoteModule()</code></li>
+    <li>
+      Remote file <code>remoteEntry.js</code> is downloaded from port 4201
+    </li>
+    <li>Remote exposes <code>DashboardModule</code></li>
+    <li>Shell loads and renders it like a local module</li>
+  </ol>
+
+  <hr />
+
+  <h4>Key Concept:</h4>
+  <p>
+    This module is <b>NOT bundled</b> with the main app.<br />
+    It is <b>fetched at runtime</b> from another app.
+  </p>
+
+  <hr />
+
+  <p style="color: green">✔ Remote loaded from: http://localhost:4201</p>
+</div>
