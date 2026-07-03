@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { ParentDiTestComponent } from './parent.component';
 
 describe('ParentComponent', () => {
@@ -7,7 +8,8 @@ describe('ParentComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ParentDiTestComponent]
+      declarations: [ParentDiTestComponent],
+      schemas: [NO_ERRORS_SCHEMA]
     })
     .compileComponents();
 

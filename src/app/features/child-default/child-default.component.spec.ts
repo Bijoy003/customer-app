@@ -14,6 +14,7 @@ describe('ChildDefaultComponent', () => {
 
     fixture = TestBed.createComponent(ChildDefaultComponent);
     component = fixture.componentInstance;
+    component.user = { name: 'Test User' };
     fixture.detectChanges();
   });
 

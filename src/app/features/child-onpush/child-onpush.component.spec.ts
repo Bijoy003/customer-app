@@ -1,19 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ChildOnpushComponent } from './child-onpush.component';
+import { ChildOnPushComponent } from './child-onpush.component';
 
-describe('ChildOnpushComponent', () => {
-  let component: ChildOnpushComponent;
-  let fixture: ComponentFixture<ChildOnpushComponent>;
+describe('ChildOnPushComponent', () => {
+  let component: ChildOnPushComponent;
+  let fixture: ComponentFixture<ChildOnPushComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ChildOnpushComponent]
+      declarations: [ChildOnPushComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(ChildOnpushComponent);
+    fixture = TestBed.createComponent(ChildOnPushComponent);
     component = fixture.componentInstance;
+    component.user = { name: 'Test User' };
     fixture.detectChanges();
   });
 

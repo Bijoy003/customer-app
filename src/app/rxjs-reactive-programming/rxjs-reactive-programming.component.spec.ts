@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { RxjsReactiveProgrammingComponent } from './rxjs-reactive-programming.component';
 
@@ -8,6 +9,7 @@ describe('RxjsReactiveProgrammingComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
+      imports: [ReactiveFormsModule],
       declarations: [RxjsReactiveProgrammingComponent]
     })
     .compileComponents();

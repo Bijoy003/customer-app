@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { provideMockStore } from '@ngrx/store/testing';
 
 import { NgrxStateManagementComponent } from './ngrx-state-management.component';
 
@@ -8,7 +9,8 @@ describe('NgrxStateManagementComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [NgrxStateManagementComponent]
+      declarations: [NgrxStateManagementComponent],
+      providers: [provideMockStore({ initialState: { counter: { count: 0 } } })]
     })
     .compileComponents();
 

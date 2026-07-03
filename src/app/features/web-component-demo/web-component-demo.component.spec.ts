@@ -8,7 +8,7 @@ describe('WebComponentDemoComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [WebComponentDemoComponent]
+      imports: [WebComponentDemoComponent]
     })
     .compileComponents();
 
