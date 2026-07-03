@@ -28,6 +28,8 @@ import { AppConfigService } from './core/Services/app-config.service';
 import { FeatureTestComponent } from './features/feature-test/feature-test.component';
 import { loadRemoteModule } from '@angular-architects/module-federation';
 import { WebComponentDemoComponent } from './features/web-component-demo/web-component-demo.component';
+import { dashboardRouteFactory } from './core/routing/dashboard-route.factory';
+import { AuthService } from './core/Services/auth.service';
 
 // // const routes: Routes = [
 // //   {
@@ -156,6 +158,12 @@ const routes: Routes = [
       provide: ROUTES,
       useFactory: featureRouteFactory,
       deps: [AppConfigService],
+      multi: true,
+    },
+    {
+      provide: ROUTES,
+      useFactory: dashboardRouteFactory,
+      deps: [AuthService],
       multi: true,
     },
   ],

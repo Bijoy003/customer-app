@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { AuthService } from '../../core/Services/auth.service';
 
 @Component({
   selector: 'app-feature-test',
@@ -7,19 +8,19 @@ import { Router } from '@angular/router';
 })
 export class FeatureTestComponent {
 
-  constructor(private router: Router) {}
+  constructor(private auth: AuthService, private router: Router) {}
 
-  enableBeta() {
-    localStorage.setItem('beta', 'true');
-    alert('Beta enabled. Reload app to apply routes.');
+  get role(): string {
+    return this.auth.getRole();
   }
 
-  disableBeta() {
-    localStorage.removeItem('beta');
-    alert('Beta disabled. Reload app to apply routes.');
+  toggleRole() {
+    const nextRole = this.role === 'admin' ? 'user' : 'admin';
+    this.auth.setRole(nextRole);
   }
 
-  goToBeta() {
-    this.router.navigate(['/beta']);
+  goToDashboard() {
+    const target = this.role === 'admin' ? '/admindashboard' : '/userdashboard';
+    this.router.navigate([target]);
   }
 }

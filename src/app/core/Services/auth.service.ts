@@ -16,6 +16,11 @@ export class AuthService {
     localStorage.setItem('role', role);
   }
 
+  setRole(role: string) {
+    localStorage.setItem('user', 'true');
+    localStorage.setItem('role', role);
+  }
+
   logout() {
     localStorage.removeItem('user');
     localStorage.removeItem('role');

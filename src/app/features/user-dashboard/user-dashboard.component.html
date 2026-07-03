@@ -1,0 +1,11 @@
+<h2>User Dashboard</h2>
+<p>Current role: <strong>{{ role }}</strong></p>
+
+<p>
+  You landed here because your role is <strong>user</strong> (anything other
+  than admin). This route (<code>/userdashboard</code>) is registered
+  dynamically at app startup via a <code>useFactory</code> ROUTES provider,
+  not in the static routes array.
+</p>
+
+<button (click)="goBack()">Back to Feature Test</button>

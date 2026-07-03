@@ -32,6 +32,8 @@ import { LoginComponent } from './features/login/login.component';
 import { DashboardComponent } from './features/dashboard/dashboard.component';
 import { FeatureTestComponent } from './features/feature-test/feature-test.component';
 import { WebComponentDemoComponent } from './features/web-component-demo/web-component-demo.component';
+import { AdminDashboardComponent } from './features/admin-dashboard/admin-dashboard.component';
+import { UserDashboardComponent } from './features/user-dashboard/user-dashboard.component';
 
 
 @NgModule({
@@ -53,6 +55,8 @@ import { WebComponentDemoComponent } from './features/web-component-demo/web-com
     ParentDiTestComponent,
     LoginComponent,
     FeatureTestComponent,
+    AdminDashboardComponent,
+    UserDashboardComponent,
   ],
   imports: [
     BrowserModule,
