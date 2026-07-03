@@ -1,0 +1,10 @@
+<h2>Admin Dashboard</h2>
+<p>Current role: <strong>{{ role }}</strong></p>
+
+<p>
+  You landed here because your role is <strong>admin</strong>. This route
+  (<code>/admindashboard</code>) is registered dynamically at app startup via
+  a <code>useFactory</code> ROUTES provider, not in the static routes array.
+</p>
+
+<button (click)="goBack()">Back to Feature Test</button>

@@ -1,0 +1,46 @@
+<h2>Role-based Dashboard Navigation (Dynamic Routes via useFactory)</h2>
+
+<p>
+  <strong>What is this?</strong><br>
+  This demo navigates to an <strong>admin</strong> or <strong>user</strong>
+  dashboard based on the current role. Since the app has no real role system,
+  use the "Switch Role" button to toggle the role stored in
+  <code>localStorage</code>.
+</p>
+
+<p>
+  <strong>How it works:</strong>
+</p>
+<ul>
+  <li>Role is stored in <code>localStorage('role')</code> via <code>AuthService</code>.</li>
+  <li><strong>Switch Role</strong> toggles between <code>admin</code> and <code>user</code> (<code>AuthService.setRole()</code>).</li>
+  <li><strong>Go to Dashboard</strong> reads the current role and routes to
+    <code>/admindashboard</code> (admin) or <code>/userdashboard</code> (everything else).</li>
+  <li>The two dashboard routes are <strong>not</strong> in the static routes array.
+    They are created dynamically based on the current role by
+    <code>dashboardRouteFactory(auth)</code> and registered through a
+    <code>useFactory</code> <code>ROUTES</code> multi-provider (with
+    <code>deps: [AuthService]</code>) in <code>AppRoutingModule</code>.</li>
+</ul>
+
+<p>
+  <strong>Important — reload required after switching role:</strong>
+</p>
+<ul>
+  <li>The factory runs <strong>only once at app startup</strong>, so only the
+    route matching the role at boot time is registered
+    (<code>admindashboard</code> for admin, otherwise <code>userdashboard</code>).</li>
+  <li><strong>Switch Role</strong> only updates <code>localStorage</code>; it does
+    <strong>not</strong> re-run the factory or re-register routes.</li>
+  <li>So after switching the role you must do a <strong>full page reload</strong>
+    (browser refresh, not an in-app navigation) for the newly matching dashboard
+    route to be registered. On reload the app re-bootstraps, the factory runs
+    again, and reads the updated role from <code>localStorage</code>.</li>
+</ul>
+
+<hr>
+
+<p>Current role: <strong>{{ role }}</strong></p>
+
+<button (click)="toggleRole()">Switch Role</button>
+<button (click)="goToDashboard()">Go to Dashboard</button>

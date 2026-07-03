@@ -1,4 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ScrollingModule } from '@angular/cdk/scrolling';
+import { MatListModule } from '@angular/material/list';
 
 import { VirtualScrollComponent } from './virtual-scroll.component';
 
@@ -8,6 +10,7 @@ describe('VirtualScrollComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
+      imports: [ScrollingModule, MatListModule],
       declarations: [VirtualScrollComponent]
     })
     .compileComponents();

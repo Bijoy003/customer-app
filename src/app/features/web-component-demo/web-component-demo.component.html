@@ -1,0 +1,9 @@
+<h2>Web Component Demo</h2>
+
+<div *ngIf="isLoaded; else loading">
+  <dashboard-widget></dashboard-widget>
+</div>
+
+<ng-template #loading>
+  <p>Loading Web Component...</p>
+</ng-template>

@@ -15,5 +15,7 @@ import { OrdersComponent } from './orders.component';
   ]
 })
 export class OrdersModule {
-  
+    constructor() {
+    console.log('Orders module loaded');
+  }
  }

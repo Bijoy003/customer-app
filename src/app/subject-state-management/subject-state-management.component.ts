@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { CounterSubjectService } from '../Services/counter-subject.service';
+import { CounterSubjectService } from '../core/Services/counter-subject.service';
 
 @Component({
   selector: 'app-subject-state-management',

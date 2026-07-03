@@ -1,0 +1,24 @@
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+
+import { ChildDefaultComponent } from './child-default.component';
+
+describe('ChildDefaultComponent', () => {
+  let component: ChildDefaultComponent;
+  let fixture: ComponentFixture<ChildDefaultComponent>;
+
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
+      declarations: [ChildDefaultComponent]
+    })
+    .compileComponents();
+
+    fixture = TestBed.createComponent(ChildDefaultComponent);
+    component = fixture.componentInstance;
+    component.user = { name: 'Test User' };
+    fixture.detectChanges();
+  });
+
+  it('should create', () => {
+    expect(component).toBeTruthy();
+  });
+});
